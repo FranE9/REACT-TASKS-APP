@@ -1,4 +1,5 @@
-import { tasks } from "./tasks";
+import { tasks } from "../data/tasks";
+import TaskCards from './TaskCards'
 
 function TaskList(tasks) {
   if (tasks.tasks.length === 0) {
@@ -8,10 +9,7 @@ function TaskList(tasks) {
   return (
     <div>
       {tasks.tasks.map((task) => (
-        <div key={task.id}>
-          <h1>{task.title}</h1>
-          <p>{task.description}</p>
-        </div>
+        <TaskCards key={task.id} task={task}/>
       ))}
     </div>
   );
